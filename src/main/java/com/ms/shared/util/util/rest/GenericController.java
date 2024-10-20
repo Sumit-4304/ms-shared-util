@@ -28,7 +28,7 @@ import java.util.Set;
  *@version 1.0
 */
 
-public abstract class GenericController<E extends GenericDTO, K> extends AppController {
+public abstract class GenericController<E extends GenericDTO, K>{
 
 	// TODO Create a seperate enum class for these constant
 	public final String GENERIC_ERROR_CODE = "400";
