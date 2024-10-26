@@ -52,7 +52,7 @@ public abstract class GenericController<E extends GenericDTO, K>{
 	public abstract IGenericService<GenericEntity, K> getService();
 
 	@GetMapping("/{id}")
-	@RolesAllowed({"ADMIN"})
+//	@RolesAllowed({"ADMIN"})
 	public @ResponseBody GenericResponse getRequest(@RequestHeader("Authorization") final String token, @PathVariable final K id) throws FatalException {
 		GenericResponse genericResponse = new GenericResponse();
 		setAuthToken(token);
@@ -66,7 +66,7 @@ public abstract class GenericController<E extends GenericDTO, K>{
 	}
 
 	@GetMapping("/all")
-	@RolesAllowed({ "ADMIN" })
+//	@RolesAllowed({ "ADMIN" })
 	public @ResponseBody GenericResponse getAll(@RequestHeader("Authorization") final String token) throws FatalException {
 		setAuthToken(token);
 		List<GenericDTO> genericDTOs = getService().getAll();
